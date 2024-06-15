@@ -108,3 +108,6 @@ if ! groups | grep -q docker; then
     fi
     echo "docker permission successful"
 fi
+
+# check docker-compose
+check_and_install docker-compose docker-compose docker-compose
