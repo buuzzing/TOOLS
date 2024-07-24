@@ -1,8 +1,8 @@
 #!/bin/bash
 # prepare environment for chainmaker
 
-GO_URL="https://golang.google.cn/dl/go1.18.linux-amd64.tar.gz"
-GO_FILE="go1.18.linux-amd64.tar.gz"
+GO_URL="https://golang.google.cn/dl/go1.19.13.linux-amd64.tar.gz"
+GO_FILE="go1.19.13.linux-amd64.tar.gz"
 
 # check architecture
 arch=$(uname -m)
@@ -53,7 +53,7 @@ if ! type go >/dev/null 2>&1; then
     echo "downloading go..."
     wget -P /tmp $GO_URL
 
-    sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf /tmp/go1.18.linux-amd64.tar.gz
+    sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf /tmp/$GO_FILE
     echo 'export PATH=$PATH:/usr/local/go/bin' >>$HOME/.profile
     source $HOME/.profile
 
